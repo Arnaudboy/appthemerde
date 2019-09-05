@@ -23,9 +23,3 @@ require 'xkcd'
  	#	items << Item.create!(image_url:title XKCD.search)
  	#end
  end
-<<<<<<< HEAD
-=======
- 
-
-
->>>>>>> Delivery_BDD
