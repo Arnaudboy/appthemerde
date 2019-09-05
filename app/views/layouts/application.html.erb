@@ -27,7 +27,7 @@
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
               <li class="nav-button">
-                <%= link_to "Cart", new_cart_path, class: "nav-link" %>
+                <%= link_to "Cart", cart_path, class: "nav-link" %>
               </li>
               <li class="nav-button">
                 <%= link_to "Profile", edit_user_registration_path, class: "nav-link" %>
@@ -56,7 +56,7 @@
 </body>
 <!-------------------------------Footer--------------------------------->
 
-<footer class="page-footer font-small pt-4 style="background: #DE9B9B"">
+<footer class="page-footer font-small pt-4" style="background: #DE9B9B">
 
   <div class="container-fluid text-center text-md-left">
 

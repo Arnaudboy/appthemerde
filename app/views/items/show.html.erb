@@ -1,4 +1,23 @@
-<h1>Items#show</h1>
+
+<div class="card card-content mb-3">
+
+  <h3 class="card-header" style="text-align: center;"> <%= @item.title %> </h3>
+
+  <%= image_tag 'cute-kitten.jpeg' %>
+
+    <div class="card-body" >
+
+        <p class="card-text" style="float:left;"> <%= @item.price%> € </p> 
+
+
+
+         <%= link_to "Ajouter au panier", item_path(@item.id), method: 'put', class:"card-link" %>
+
+     </div>
+</div> 
+
+<br/> <br/>
+
 
 
 <a href="<%= item_path(@item.id)%>" data-method="patch"> Ajouter au panier </a>
