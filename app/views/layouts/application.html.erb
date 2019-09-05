@@ -27,7 +27,7 @@
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
               <li class="nav-button">
-                <%= link_to "Cart", cart_path, class: "nav-link" %>
+                <%= link_to "Cart", cart_path(cart.id), class: "nav-link" %>
               </li>
               <li class="nav-button">
                 <%= link_to "Profile", edit_user_registration_path, class: "nav-link" %>
