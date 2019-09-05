@@ -6,10 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 require 'faker'
 require 'xkcd'
 
  Item.destroy_all
+ User.destroy_all
+ Cart.destroy_all
 
  items = []
 
@@ -20,4 +23,9 @@ require 'xkcd'
  	#	items << Item.create!(image_url:title XKCD.search)
  	#end
  end
+<<<<<<< HEAD
+=======
  
+
+
+>>>>>>> Delivery_BDD

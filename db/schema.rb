@@ -17,9 +17,11 @@ ActiveRecord::Schema.define(version: 2019_09_02_115950) do
 
   create_table "carts", force: :cascade do |t|
     t.bigint "item_id"
+    t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_carts_on_item_id"
+    t.index ["order_id"], name: "index_carts_on_order_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -33,10 +35,8 @@ ActiveRecord::Schema.define(version: 2019_09_02_115950) do
 
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "cart_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cart_id"], name: "index_orders_on_cart_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 

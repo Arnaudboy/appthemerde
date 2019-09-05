@@ -10,6 +10,118 @@
   </head>
 
   <body>
+  <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+<!-------------------------------Navbar--------------------------------->
+     
+<nav class="navbar navbar-expand-lg fixed-top" style="background: #DE9B9B">
+  <div class="container">
+    <a class="navbar-brand mr-sm-2"><%=link_to image_tag("Banner.svg", alt:"Chat Alors!", style:"height: 60px; width: 50%"), items_path%></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+              <li class="nav-button">
+                <%= link_to "Cart", new_cart_path, class: "nav-link" %>
+              </li>
+              <li class="nav-button">
+                <%= link_to "Profile", user_your_cart_index_path(current_user), class: "nav-link" %>
+              </li>
+              <li class="nav-button">
+                <%= link_to "Log out", destroy_user_session_path, :class => "nav-link", :method => :delete %>
+              </li>   
+            <% else %>
+              <li class="nav-button">
+                <%= link_to 'Sign up', new_user_registration_path, class: "nav-link", 'data-toggle' => "modal", 'data-target' => "#modalSignup" %>
+              </li>
+              <li class="nav-button">
+                <%= link_to 'Log in', new_user_session_path, class: "nav-link", 'data-toggle' => "modal", 'data-target' => "#modalLogin" %>
+              </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-------------------------------Body--------------------------------->
+<body>
+    <br/><br/><br/><br/><br/><br/>
+
     <%= yield %>
-  </body>
-</html>
+</body>
+<!-------------------------------Footer--------------------------------->
+
+<footer class="page-footer font-small pt-4 style="background: #DE9B9B"">
+
+  <div class="container-fluid text-center text-md-left">
+
+    <div class="row">
+
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <h5 class="text-uppercase">Footer Content</h5>
+        <p>Here you can use rows and columns to organize your footer content.</p>
+
+      </div>
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+     
+
+    </div>
+   
+
+  </div>
+ 
+
+  
+  <div class="footer-copyright text-center py-3">Made with the hacking project:
+    <a href="https://www.thehackingproject.org"> MDBootstrap.com</a>
+  </div>
+ 
+</footer>
