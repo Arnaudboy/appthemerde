@@ -1,9 +1,13 @@
 class CartsController < ApplicationController
 
 
-  def show 
+  def index 
   	@cart = current_user.cart
-  	@item = Item.find(params[:id])
+
+    puts "#" *60
+    puts @cart.item_id
+    puts "#" *60
+ # @item = Item.find(@cart[:item_id])
   end
 
   def create
