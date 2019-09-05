@@ -30,7 +30,7 @@
                 <%= link_to "Cart", new_cart_path, class: "nav-link" %>
               </li>
               <li class="nav-button">
-                <%= link_to "Profile", user_your_cart_index_path(current_user), class: "nav-link" %>
+                <%= link_to "Profile", edit_user_registration_path, class: "nav-link" %>
               </li>
               <li class="nav-button">
                 <%= link_to "Log out", destroy_user_session_path, :class => "nav-link", :method => :delete %>
