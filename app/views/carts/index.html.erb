@@ -10,19 +10,19 @@
 	<h1 class="index-title"> Your cart:</h1>
 
 	<ul class="list-group-cart">
-		<% @items.each do |item| %>
+
 		<li class="list-group-item d-flex justify-content-between align-items-center list-checkout-cart">
 
 			<div class="item-details-container">
-				<%= image_tag "#{item.image_url}", alt: "image", class: "product-image" %>				
+				<%= image_tag "#{@item.image_url}", alt: "image", class: "product-image" %>				
 			</div>
 				<div class="item-title-description">
-					<h3><%= link_to item.title, item_path(item.title)%></h3>
+					<h3><%= link_to @item.title, item_path(@item.title)%></h3>
 					<small class="text-muted description-text-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at quam placerat, aliquet ex et, rhoncus erat. Pellentesque faucibus semper magna, id blandit enim eleifend egestas. Duis iaculis ut est in pulvinar.</small>
 			</div>
 
 			<div class="price-container">
-				<%= item.price %>€
+				<%= @item.price %>€
 			</div>
 
 			<div class="quantity-button">
@@ -40,26 +40,12 @@
 						</div>
 
 						<div class="trash-div">
-							<%= link_to "XXXX", item_path(item.id), method: :delete, :class => "fas fa-trash-alt" %>
+							<%= link_to "XXXX", item_path(@item.id), method: :delete, :class => "fas fa-trash-alt" %>
 						</div>
 					</div>
 				</div>
 			</div>
 		</li>	
 	</ul>
-<% end %>
 
-	<div class="total">
-		<% count = 0.0 %>
-		<% @items.each do |item|%>
-		<% count += item.price %>
-		<% end %>
-
-		<hr class="total-bar" >
-		<h5 class="total-cart">Sous-total (<%= @items.count %> articles) : <span class="price-color"><%= count%>€</span></h5>
-		<%= link_to "Checkout", new_user_your_cart_order_path(current_user.id, current_user.cart.id), class: "btn btn-outline-primary total-cart", id: "checkout-button" %>
-	</div>
-<% end %>
-
-<div class="space">
-</div>
+<%end%>

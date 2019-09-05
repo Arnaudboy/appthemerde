@@ -12,12 +12,10 @@ class ItemsController < ApplicationController
 	end
 	
 	def show
-
-		@item = Item.find(params[:id])
 		puts "#" *60
   	puts current_user.cart.id
   	puts "#" *60
-
+		@item = Item.find(params[:id])
 	end
 
 	def update

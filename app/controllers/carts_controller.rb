@@ -7,7 +7,7 @@ class CartsController < ApplicationController
     puts "#" *60
     puts @cart.item_id
     puts "#" *60
- # @item = Item.find(@cart[:item_id])
+  @item = Item.find(@cart[:item_id])
   end
 
   def create
